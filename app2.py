@@ -133,7 +133,9 @@ sigh_up_but.place(x=210, y=233)
 
 log_in_but.bind('<Enter>', but1)
 log_in_but.bind('<Leave>', lv1)
-
+app.bind('<Control-z>',hide)
+app.bind('<Control-l>',log)
+app.bind('<Control-s>',sigh)
 
 sigh_up_but.bind('<Enter>', but2)
 sigh_up_but.bind('<Leave>', lv2)
