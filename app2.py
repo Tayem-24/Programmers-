@@ -33,7 +33,7 @@ def log(event=None):
 
     f1=Frame(app,bg='white',bd=0 ,relief=SOLID, height=21)
     f1.place(x=400 ,y=5,width='205',height='330'  )
-    l=Label(f1,text='welcome',fg='red',bg='white',font=('times for romans', 16, 'bold'))
+    l=Label(f1,text='log_in',fg='red',bg='white',font=('times for romans', 16, 'bold'))
     l.place(x=10,y=50)
     l2=Label(f1,text='user_name',fg='red',bg='white',font=('times for romans', 12, 'bold'))
     l2.place(x=10,y=100)
@@ -54,16 +54,7 @@ def log(event=None):
                     relief=SOLID,
                     font=('Arial', 10, 'bold'),)
     b2.place(x=10 ,y=200 )
-    b3=Button(f1, text='sigh_up'
-                    ,fg='red',
-                    height='2',
-                    width='15',
-                    bg='white',
-                    cursor='hand2',
-                    bd=1,
-                    relief=SOLID,
-                    font=('Arial', 10, 'bold'),)
-    b3.place(x=10 ,y=250 )
+    
     
 
 def sigh(event=None):
@@ -82,7 +73,7 @@ def sigh(event=None):
 
     f1=Frame(app,bg='white',bd=0 ,relief=SOLID, height=21)
     f1.place(x=400 ,y=5,width='205',height='330'  )
-    l=Label(f1,text='welcome',fg='red',bg='white',font=('times for romans', 16, 'bold'))
+    l=Label(f1,text='sigh_up',fg='red',bg='white',font=('times for romans', 16, 'bold'))
     l.place(x=10,y=50)
     l2=Label(f1,text='user_name',fg='red',bg='white',font=('times for romans', 12, 'bold'))
     l2.place(x=10,y=100)
@@ -93,16 +84,7 @@ def sigh(event=None):
     l3.place(x=10,y=140)
     e2=Entry(f1,width='20', fg='black',font=('times for romans', 10, 'bold'))
     e2.place(x=10,y=160)
-    b2=Button(f1, text='log_in'
-                    ,fg='red',
-                    height='2',
-                    width='15',
-                    bg='white',
-                    cursor='hand2',
-                    bd=1,
-                    relief=SOLID,
-                    font=('Arial', 10, 'bold'),)
-    b2.place(x=10 ,y=200 )
+    
     b3=Button(f1, text='sigh_up'
                     ,fg='red',
                     height='2',
@@ -112,7 +94,7 @@ def sigh(event=None):
                     bd=1,
                     relief=SOLID,
                     font=('Arial', 10, 'bold'),)
-    b3.place(x=10 ,y=250 )
+    b3.place(x=10 ,y=200 )
 
 
 
