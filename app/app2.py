@@ -9,10 +9,10 @@ def lv1(event=None):
     log_in_but.config(background='white',foreground='black')
 
 def but2(event=None):
-    sigh_up_but.config(background='black',foreground='white')
+    sign_up_but.config(background='black',foreground='white')
 
 def lv2(event=None):
-    sigh_up_but.config(background='white',foreground='black')
+    sign_up_but.config(background='white',foreground='black')
 
 def hide(event=None):
     app.geometry("350x300+400+200")
@@ -30,9 +30,9 @@ def log(event=None):
                     font=('Arial', 10, 'bold'),
                     command=hide)
     b1.place(x=610 ,y=6 )
-
+ 
     f1=Frame(app,bg='white',bd=0 ,relief=SOLID, height=21)
-    f1.place(x=400 ,y=5,width='205',height='330'  )
+    f1.place(x=400 ,y=5,width='205',height='330')
     l=Label(f1,text='log_in',fg='red',bg='white',font=('times for romans', 16, 'bold'))
     l.place(x=10,y=50)
     l2=Label(f1,text='user_name',fg='red',bg='white',font=('times for romans', 12, 'bold'))
@@ -57,7 +57,7 @@ def log(event=None):
     
     
 
-def sigh(event=None):
+def sign(event=None):
     app.geometry("630x300+400+200")
     b1=Button(app, text='<'
                     ,fg='black',
@@ -73,7 +73,7 @@ def sigh(event=None):
 
     f1=Frame(app,bg='white',bd=0 ,relief=SOLID, height=21)
     f1.place(x=400 ,y=5,width='205',height='330'  )
-    l=Label(f1,text='sigh_up',fg='red',bg='white',font=('times for romans', 16, 'bold'))
+    l=Label(f1,text='sign_up',fg='red',bg='white',font=('times for romans', 16, 'bold'))
     l.place(x=10,y=50)
     l2=Label(f1,text='user_name',fg='red',bg='white',font=('times for romans', 12, 'bold'))
     l2.place(x=10,y=100)
@@ -85,7 +85,7 @@ def sigh(event=None):
     e2=Entry(f1,width='20', fg='black',font=('times for romans', 10, 'bold'))
     e2.place(x=10,y=160)
     
-    b3=Button(f1, text='sigh_up'
+    b3=Button(f1, text='sign_up'
                     ,fg='red',
                     height='2',
                     width='15',
@@ -119,7 +119,7 @@ log_in_but = Button(app, text='log_in'
 
                      ) 
 log_in_but.place(x=70, y=233)
-sigh_up_but = Button(app, text='sigh_up'
+sign_up_but = Button(app, text='sign_up'
                     ,fg='black',
                     width='12',
                     bg='white',
@@ -127,14 +127,14 @@ sigh_up_but = Button(app, text='sigh_up'
                     bd=1,
                     relief=SOLID,
                     font=('Arial', 10, 'bold'),
-                    command=sigh
+                    command=sign
                      ) 
-sigh_up_but.place(x=210, y=233)
+sign_up_but.place(x=210, y=233)
 
 log_in_but.bind('<Enter>', but1)
 log_in_but.bind('<Leave>', lv1)
 
 
-sigh_up_but.bind('<Enter>', but2)
-sigh_up_but.bind('<Leave>', lv2)
+sign_up_but.bind('<Enter>', but2)
+sign_up_but.bind('<Leave>', lv2)
 app.mainloop()
