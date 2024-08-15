@@ -4,8 +4,8 @@ app = tk.Tk()
 home_screen = tk.Toplevel(app)
 home_screen.title("home")
 home_screen.withdraw()
-commu = tk.Tk()
-coach = tk.Tk()
+commu = tk.Toplevel(app)
+coach = tk.Toplevel(app)
 videos = tk.Tk()
 videos.state('withdrawn')
 coach.state('withdrawn')
@@ -41,18 +41,27 @@ def info_sign():
     home()
 
 def close_window():
-    home_screen.destroy()
+    home_screen.withdraw()
 
 
 def community_tab():
-    commu.state('normal')
+    commu.deiconify()
     close_window()
 
 
 def lifecoach_tab():
     #=========يظهر الشاشه=========
-    coach.state('normal')
-    
+    coach.deiconify()
+    back = Button(coach, text="Back",fg='black',
+                    height='1',
+                    width='5',
+                    bg='white',
+                    cursor='hand2',
+                    bd=1,
+                    relief=SOLID,
+                    font=('Arial', 10, 'bold'),
+                    command=backbutton)
+    back.place(x=100,y=100)
     coach.title("life choices")
     coach.geometry("360x640")
     coach.configure(bg="#f0f0f0")
@@ -127,6 +136,12 @@ def lifecoach_tab():
     close_window()
 
 
+def backbutton():
+    commu.withdraw()
+    coach.withdraw()
+    home_screen.deiconify()
+
+
 def videos_tab():
     videos.state('normal')
     home_screen.destroy()
@@ -162,6 +177,7 @@ def log(event=None):
                     font=('Arial', 10, 'bold'),
                     command=hide)
     b1.place(x=610 ,y=6 )
+    back=Button(app, text='Back')
 
     f1=Frame(app,bg='white',bd=0 ,relief=SOLID, height=21)
     f1.place(x=400 ,y=5,width='205',height='330')
