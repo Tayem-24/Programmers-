@@ -61,7 +61,7 @@ def lifecoach_tab():
                     relief=SOLID,
                     font=('Arial', 10, 'bold'),
                     command=backbutton)
-    back.place(x=100,y=100)
+    back.place(x=120,y=500)
     coach.title("life choices")
     coach.geometry("360x640")
     coach.configure(bg="#f0f0f0")
@@ -314,9 +314,9 @@ app.title('log_in')
 app.geometry("350x300+400+200")
 app.resizable(False ,False)
 
-# logo = PhotoImage(file = 'pic/images.png' )
-# logo_lab =Label(app, image=logo)
-# logo_lab.place(x=70,y=10)
+logo = PhotoImage(file = 'pic/images.png' )
+logo_lab =Label(app, image=logo)
+logo_lab.place(x=70,y=10)
 
 log_in_but = Button(app, text='log_in'
                     ,fg='black',
