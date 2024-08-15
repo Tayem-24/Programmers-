@@ -66,8 +66,6 @@ def habits_tab():
     home_screen.withdraw()
 
 
-
-
 def lifecoach_tab():
     #=========يظهر الشاشه=========
     coach.deiconify()
@@ -163,6 +161,14 @@ def backbutton():
     home_screen.deiconify()
 
 
+def get_creds():
+    global name_cred
+    global pass_cred
+    name_cred = log_name.get()
+    pass_cred = log_pass.get()
+
+
+
 def videos_tab():
     videos.state('normal')
     home_screen.destroy()
@@ -184,10 +190,10 @@ def hide(event=None):
     app.geometry("350x300+400+200")
 
 def log(event=None):
-    global e1
-    global e2
+    global log_name
+    global log_pass
     app.geometry("630x300+400+200")
-    b1=Button(app, text='<'
+    b1 = Button(app, text='<'
                     ,fg='black',
                     height='21',
                     width='12',
@@ -198,21 +204,19 @@ def log(event=None):
                     font=('Arial', 10, 'bold'),
                     command=hide)
     b1.place(x=610 ,y=6 )
-    back=Button(app, text='Back')
-
     f1=Frame(app,bg='white',bd=0 ,relief=SOLID, height=21)
     f1.place(x=400 ,y=5,width='205',height='330')
     l=Label(f1,text='log_in',fg='red',bg='white',font=('times for romans', 16, 'bold'))
     l.place(x=10,y=50)
     l2=Label(f1,text='user_name',fg='red',bg='white',font=('times for romans', 12, 'bold'))
     l2.place(x=10,y=100)
-    e1=Entry(f1,width='20', fg='black',font=('times for romans', 10, 'bold'))
-    e1.place(x=10,y=125)
+    log_name=Entry(f1,width='20', fg='black',font=('times for romans', 10, 'bold'))
+    log_name.place(x=10,y=125)
 
     l3=Label(f1,text='password',fg='red',bg='white',font=('times for romans', 12, 'bold'))
     l3.place(x=10,y=140)
-    e2=Entry(f1,width='20', fg='black',font=('times for romans', 10, 'bold'))
-    e2.place(x=10,y=160)
+    log_pass=Entry(f1,width='20',show='*', fg='black',font=('times for romans', 10, 'bold'))
+    log_pass.place(x=10,y=160)
     b2=Button(f1, text='log_in'
                     ,fg='red',
                     height='2',
@@ -221,7 +225,8 @@ def log(event=None):
                     cursor='hand2',
                     bd=1,
                     relief=SOLID,
-                    font=('Arial', 10, 'bold'),)
+                    font=('Arial', 10, 'bold'),
+                    command=get_creds)
     b2.place(x=10 ,y=200 )
 
 
