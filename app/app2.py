@@ -6,7 +6,9 @@ home_screen.title("home")
 home_screen.withdraw()
 commu = tk.Toplevel(app)
 coach = tk.Toplevel(app)
+habits = tk.Toplevel(app)
 videos = tk.Tk()
+habits.state('withdrawn')
 videos.state('withdrawn')
 coach.state('withdrawn')
 commu.state('withdrawn')
@@ -47,6 +49,23 @@ def close_window():
 def community_tab():
     commu.deiconify()
     close_window()
+
+
+def habits_tab():
+    habits.deiconify()
+    back = Button(habits, text="Back", fg='black',
+                  height='1',
+                  width='5',
+                  bg='white',
+                  cursor='hand2',
+                  bd=1,
+                  relief=SOLID,
+                  font=('Arial', 10, 'bold'),
+                  command=backbutton)
+    back.place(x=120,y=500)
+    home_screen.withdraw()
+
+
 
 
 def lifecoach_tab():
@@ -139,6 +158,8 @@ def lifecoach_tab():
 def backbutton():
     commu.withdraw()
     coach.withdraw()
+    videos.withdraw()
+    habits.withdraw()
     home_screen.deiconify()
 
 
@@ -250,7 +271,7 @@ def home():
                 font=('Arial', 10, 'bold'),
                 command=videos_tab)
     b3.place(x=175, y=260)
-    b4 = Button(home_screen, text='l'
+    b4 = Button(home_screen, text='Add Habits'
                 , fg='black',
                 height='2',
                 width='10',
@@ -258,7 +279,8 @@ def home():
                 cursor='hand2',
                 bd=1,
                 relief=SOLID,
-                font=('Arial', 10, 'bold'), )
+                font=('Arial', 10, 'bold'),
+                command=habits_tab)
     # command=hide)
     b4.place(x=175, y=350)
     app.state('withdrawn')
@@ -314,9 +336,9 @@ app.title('log_in')
 app.geometry("350x300+400+200")
 app.resizable(False ,False)
 
-logo = PhotoImage(file = 'pic/images.png' )
-logo_lab =Label(app, image=logo)
-logo_lab.place(x=70,y=10)
+# logo = PhotoImage(file = 'pic/images.png' )
+# logo_lab =Label(app, image=logo)
+# logo_lab.place(x=70,y=10)
 
 log_in_but = Button(app, text='log_in'
                     ,fg='black',
@@ -328,7 +350,7 @@ log_in_but = Button(app, text='log_in'
                     font=('Arial', 10, 'bold'),
                     command=log
 
-                     ) 
+                     )
 log_in_but.place(x=70, y=233)
 sign_up_but = Button(app, text='sign_up'
                     ,fg='black',
@@ -339,7 +361,7 @@ sign_up_but = Button(app, text='sign_up'
                     relief=SOLID,
                     font=('Arial', 10, 'bold'),
                     command=sign
-                     ) 
+                     )
 sign_up_but.place(x=210, y=233)
 
 log_in_but.bind('<Enter>', but1)
