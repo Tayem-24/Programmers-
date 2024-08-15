@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 import tkinter as tk
 app = tk.Tk()
 home_screen = tk.Toplevel(app)
@@ -52,7 +53,18 @@ def community_tab():
 
 
 def habits_tab():
+    commu.deiconify()
+    close_window()
     habits.deiconify()
+    habits.title("habits_tab")
+    habits.geometry("360x640")
+    habits.configure(bg="#f0f0f0")
+    f2=Frame(habits,bg='black',bd=0 ,relief=SOLID, height=21)
+    f2.place(x=1 ,y=1,width='800',height='50'  )
+    #==========lable============
+    l4=Label(habits,text='habits_tab',fg='red',bg='white',font=('times for romans', 20, 'bold'))
+    l4.place(x=110,y=10)
+
     back = Button(habits, text="Back", fg='black',
                   height='1',
                   width='5',
@@ -63,6 +75,9 @@ def habits_tab():
                   font=('Arial', 10, 'bold'),
                   command=backbutton)
     back.place(x=120,y=500)
+    com =ttk.combobox(habits,
+    value=('wake up early','stop smoke', 'sports'), state='readonly' )
+    com.place(x=120,y=200)
     home_screen.withdraw()
 
 
