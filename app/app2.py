@@ -124,6 +124,7 @@ def lifecoach_tab():
                     font=('Arial', 10, 'bold'),)
                     #command=hide)
     b4.place(x=120,y=420)
+    close_window()
 
 
 def videos_tab():
@@ -297,9 +298,9 @@ app.title('log_in')
 app.geometry("350x300+400+200")
 app.resizable(False ,False)
 
-logo = PhotoImage(file = 'pic/images.png' )
-logo_lab =Label(app, image=logo)
-logo_lab.place(x=70,y=10)
+# logo = PhotoImage(file = 'pic/images.png' )
+# logo_lab =Label(app, image=logo)
+# logo_lab.place(x=70,y=10)
 
 log_in_but = Button(app, text='log_in'
                     ,fg='black',
